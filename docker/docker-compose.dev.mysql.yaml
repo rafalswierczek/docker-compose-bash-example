@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mysql:
+    build:
+      context: ./mysql
+      args:
+        - DOCKER_MYSQL_VERSION=${DOCKER_MYSQL_VERSION}
+    environment:
+      - MYSQL_USER=${DOCKER_DB_USER}
+      - MYSQL_PASSWORD=${DOCKER_DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DOCKER_DB_ROOT_PASSWORD}
+    ports:
+      - ${DOCKER_DB_PORT}:3306

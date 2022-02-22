@@ -1,0 +1,5 @@
+ARG DOCKER_MYSQL_VERSION
+
+FROM mysql:$DOCKER_MYSQL_VERSION
+
+WORKDIR /docker-entrypoint-initdb.d
